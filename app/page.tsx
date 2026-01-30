@@ -106,8 +106,7 @@ export default function DashboardPremium() {
                     <p className="text-3xl font-black text-slate-900">R$ {totalEntradas.toLocaleString('pt-BR')}</p>
                     <p className="text-slate-400 text-xs font-medium italic">Faltam R$ {(metaMensal - totalEntradas).toLocaleString('pt-BR')} para o objetivo</p>
                 </div>
-<button onClick={() => setMetaMensal(Number(prompt("Definir nova meta mensal:", String(metaMensal))))} className="text-blue-600 text-xs font-bold hover:underline">Ajustar Meta</button>            </div>
-        </div>
+<button onClick={() => { const novaMeta = prompt("Definir nova meta mensal:", String(metaMensal)); if (novaMeta) setMetaMensal(Number(novaMeta)); }} className="text-blue-600 text-xs font-bold hover:underline">Ajustar Meta</button>        </div>
 
         {/* Gráfico de Pizza (Formas de Recebimento) */}
         <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 min-h-[300px]">
